@@ -146,6 +146,9 @@ $app->match('/apply', function (Request $request) use ($app) {
         __DIR__ . '/../profiles/',
         $data['picture']
       );
+    } else if ($data['face_url'] && $data['face_url']->isValid()) {
+      // When a URL to a picture is provided, store the URL in the 'picture' variable.
+      $data['picture'] = $data['face_url'];
     }
 
     try {
