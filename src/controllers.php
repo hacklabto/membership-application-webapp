@@ -214,7 +214,7 @@ $app->get('/payment', function () use ($app) {
   return $app['twig']->render('payment.twig');
 })
 ->bind('payment');
-pic
+
 $app->get('/logout', function () use ($app) {
   $app['session']->set('isSharedAuthenticated', false);
   return $app->redirect('/');
